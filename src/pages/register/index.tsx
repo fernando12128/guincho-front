@@ -4,7 +4,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:4200"; //tem que definir essa api para funcionar o backend
 
-const Register = () => {
+const Register = ( {navigation}) => {
 	const [isCollaborator, setIsCollaborator] = useState(false);
 
 	const [name, setName] = useState()
@@ -70,7 +70,7 @@ const Register = () => {
 				<ButtonText>Registrar</ButtonText>
 			</ToggleButton>
 
-			<FooterText>
+			<FooterText onPress={() => navigation.navigate('Login') }>
 				Já tem uma conta? Faça login
 			</FooterText>
 		</Container>

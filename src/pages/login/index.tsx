@@ -5,7 +5,8 @@ import { ButtonContainer, ButtonText, Container, Input, LinkText, Title } from "
 
 const API_URL = "http://localhost:4200"; //tem que definir essa api para funcionar o backend
 
-const LoginScreen = () => {
+
+const LoginScreen = ({ navigation }) => {
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -49,7 +50,7 @@ const LoginScreen = () => {
 				<LinkText>{showPassword ? 'Ocultar senha' : 'Mostrar senha'}</LinkText>
 			</TouchableOpacity>
 
-			<ButtonContainer onPress={() => {handleLogin}}>
+			<ButtonContainer onPress={handleLogin}>
 				<ButtonText>Entrar</ButtonText>
 			</ButtonContainer>
 
@@ -57,7 +58,7 @@ const LoginScreen = () => {
 				<LinkText>Esqueci minha senha</LinkText>
 			</TouchableOpacity>
 
-			<TouchableOpacity>
+			<TouchableOpacity onPress={() => navigation.navigate('Register') }>
 				<LinkText>Não tem uma conta? Cadastre-se</LinkText>
 			</TouchableOpacity>
 
